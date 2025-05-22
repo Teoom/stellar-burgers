@@ -9,6 +9,7 @@ import { BurgerConstructorUIProps } from './type';
 import { TConstructorIngredient } from '@utils-types';
 import { BurgerConstructorElement, Modal } from '@components';
 import { Preloader, OrderDetailsUI } from '@ui';
+import { Link } from 'react-router-dom';
 
 export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
   constructorItems,
@@ -16,7 +17,8 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
   price,
   orderModalData,
   onOrderClick,
-  closeOrderModal
+  closeOrderModal,
+  isUserAuth
 }) => (
   <section className={styles.burger_constructor}>
     {constructorItems.bun ? (
@@ -78,13 +80,24 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
         <p className={`text ${styles.text} mr-2`}>{price}</p>
         <CurrencyIcon type='primary' />
       </div>
-      <Button
-        htmlType='button'
-        type='primary'
-        size='large'
-        children='Оформить заказ'
-        onClick={onOrderClick}
-      />
+      {isUserAuth ? (
+        <Button
+          htmlType='button'
+          type='primary'
+          size='large'
+          children='Оформить заказ'
+          onClick={onOrderClick}
+        />
+      ) : (
+        <Link to='/login'>
+          <Button
+            htmlType='button'
+            type='primary'
+            size='large'
+            children='Войти'
+          />
+        </Link>
+      )}
     </div>
 
     {orderRequest && (

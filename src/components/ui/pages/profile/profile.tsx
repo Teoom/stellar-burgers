@@ -31,8 +31,8 @@ export const ProfileUI: FC<ProfileUIProps> = ({
             onChange={handleInputChange}
             value={formValue.name}
             name={'name'}
-            error={false}
-            errorText={''}
+            error={!formValue.name.length ? true : false}
+            errorText={!formValue.name.length ? 'Имя не может быть пустым' : ''}
             size={'default'}
             icon={'EditIcon'}
           />
@@ -44,8 +44,10 @@ export const ProfileUI: FC<ProfileUIProps> = ({
             onChange={handleInputChange}
             value={formValue.email}
             name={'email'}
-            error={false}
-            errorText={''}
+            error={!formValue.email.length ? true : false}
+            errorText={
+              !formValue.email.length ? 'Email не может быть пустым' : ''
+            }
             size={'default'}
             icon={'EditIcon'}
           />
@@ -57,8 +59,16 @@ export const ProfileUI: FC<ProfileUIProps> = ({
             onChange={handleInputChange}
             value={formValue.password}
             name={'password'}
-            error={false}
-            errorText={''}
+            error={
+              formValue.password.length < 6 && formValue.password !== ''
+                ? true
+                : false
+            }
+            errorText={
+              formValue.password.length < 6 && formValue.password !== ''
+                ? 'Пароль не может быть меньше 6 символов'
+                : ''
+            }
             size={'default'}
             icon={'EditIcon'}
           />
