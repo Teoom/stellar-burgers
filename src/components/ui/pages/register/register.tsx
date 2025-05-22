@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import {
   Input,
   Button,
@@ -35,8 +35,9 @@ export const RegisterUI: FC<RegisterUIProps> = ({
               value={userName}
               name='name'
               error={false}
-              errorText=''
+              errorText='sds'
               size='default'
+              required
             />
           </div>
           <div className='pb-6'>
@@ -49,6 +50,7 @@ export const RegisterUI: FC<RegisterUIProps> = ({
               error={false}
               errorText=''
               size={'default'}
+              required
             />
           </div>
           <div className='pb-6'>

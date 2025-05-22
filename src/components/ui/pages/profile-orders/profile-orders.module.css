@@ -13,3 +13,8 @@
 .orders {
   width: 100%;
 }
+
+.center {
+  display: block;
+  text-align: center;
+}
