@@ -24,6 +24,18 @@
   color: var(--text-primary-color);
 }
 
+.icon {
+  fill: var(--text-primary-color);
+}
+
+.icon_inactive {
+  fill: var(--text-inactive-color);
+}
+
+.fill {
+  fill: inherit;
+}
+
 .link_position_last {
   display: flex;
   justify-content: flex-end;
