@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { orderThunk, TOrderState } from '../model';
 
 const initialState: TOrderState = {
-  orders: null,
+  orders: [],
   lastOrder: null,
   orderRequest: false
 };
@@ -45,3 +45,4 @@ const ordersSlice = createSlice({
 
 export const { clearLastOrder } = ordersSlice.actions;
 export const ordersReducer = ordersSlice.reducer;
+export const ordersInitialState = initialState;

@@ -31,11 +31,10 @@ const userSlice = createSlice({
       state.user = payload;
       state.isAuthChecked = true;
     });
-    builder.addCase(userThunk.register.rejected, (state, data) => {
+    builder.addCase(userThunk.register.rejected, (state) => {
       state.user = null;
       state.isAuthChecked = true;
       state.error = 'Пользователь уже зарегистрирован';
-      console.log(data);
     });
 
     builder.addCase(userThunk.login.pending, (state) => {
@@ -64,3 +63,4 @@ const userSlice = createSlice({
 
 export const userReducer = userSlice.reducer;
 export const { setIsAuthChecked, setUserData, clearError } = userSlice.actions;
+export const userInitialState = initialState;
