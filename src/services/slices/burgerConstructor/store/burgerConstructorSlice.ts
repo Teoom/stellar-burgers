@@ -60,3 +60,4 @@ export const {
 } = burgerConstructorSlice.actions;
 
 export const burgerConstructorReducer = burgerConstructorSlice.reducer;
+export const burgerConstructorInitialState = initialState;
