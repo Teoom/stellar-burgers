@@ -9,7 +9,7 @@ const initialState: TFeedState = {
   isLoading: true
 };
 
-const feedSlcie = createSlice({
+const feedSlice = createSlice({
   name: 'feed',
   initialState,
   reducers: {},
@@ -33,4 +33,5 @@ const feedSlcie = createSlice({
   }
 });
 
-export const feedReducer = feedSlcie.reducer;
+export const feedReducer = feedSlice.reducer;
+export const feedInitialState = initialState;
